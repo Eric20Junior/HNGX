@@ -1,0 +1,38 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background: #f4f4f4;
+}
+
+.main-header header {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.main-header img {
+    width: 90px;
+    height: 90px;
+    border-radius: 100px;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.date_time {
+    text-align: center;
+    padding: 50px;
+}
+
+.main-footer footer {
+    margin-top: 150px;
+}
+
+.main-footer button {
+    height: 40px;
+    width: 100px;
+    border-radius: 10px;
+    cursor: pointer;
+}
