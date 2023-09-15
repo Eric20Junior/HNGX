@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+## STAGE 2 TASK
+# Objective:
+Create a movie discovery web application that allows users to search for movies, view details about them, and save their favorite movies. You’ll be consuming data from the TMDB API.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# View Live Project
+You can view the live project [Click here](https://relaxed-biscotti-de4c82.netlify.app/)
 
-## Available Scripts
+## Tools & Frameworks Used:
+Build: ReactJS
+CSS: TailwindCSS
+API: TMDB
+Hosting: Netlify
 
-In the project directory, you can run:
+## Requirements:
+# User Interface:
+- Create a responsive and visually appealing user interface for the application. https://www.figma.com/file/tVfgoNfhYkQaUkh8LGqRab/MovieBox-(Community)?type=design&node-id=1220-324&mode=design&t=6998DWtjQrxz8mOf-0
+- List the top 10 movies on the homepage.
+- They should be displayed in a grid layout with their movie posters.
+- The Card component should display the movie title and release date. card - [data-testid: movie-card] movie poster - [data-testid: movie-poster] movie title - [data-testid: movie-title] movie release date - [data-testid: movie-release-date]
+# Movie Search:
+- Implement a search feature that allows users to search for movies by title.
+- Display search results, including movie posters, titles, and release dates.
+- Show a loading indicator while fetching search results.
+- Movie Details: When I go to to /movies/:id route (where :id is the imdb_id), I should see the movie details page. I should see title - [data-testid: movie-title] release date (in UTC) - [data-testid: movie-release-date] runtime (in minutes) - [data-testid: movie-runtime] overview - [data-testid: movie-overview]
+# API Integration:
+- Consume the TMDB API to fetch movie data.
+- Use the following API endpoints:
+- Fetch movie details by ID: https://api.themoviedb.org/3/movie/{movie_id}
+Error Handling:
+- Implement error handling to display meaningful error messages to users in case of API failures or other issues.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# How To Run Project Locally
+- After cloning down:
+- Open the Integrated Terminal on 'STAGE-TWO'
+- Type in "npm i" in the terminal to ensure all the dependencies are installed
+- Type in "npm start" in the terminal to spin up the file on local host. It will spin up to local host 3000
+# Notes About The Project:
+- IMPORTANT: Pages may automatically jump to the bottom. Please scroll up to view the page content
+- The API call will bring back the top-rated movies of all time
+- Users are able to click on the poster cards to get individual information about the movie
+The search functionality works in the desktop version only as a mobile design was not specified
+- Users will need to click on the movie title name in the search drop-down to be taken to that individual movie page
