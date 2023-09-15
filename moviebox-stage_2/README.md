@@ -6,10 +6,10 @@ Create a movie discovery web application that allows users to search for movies,
 You can view the live project [Click here](https://relaxed-biscotti-de4c82.netlify.app/)
 
 ## Tools & Frameworks Used:
-Build: ReactJS
-CSS: TailwindCSS
-API: TMDB
-Hosting: Netlify
+- Build: ReactJS
+- CSS: TailwindCSS
+- API: TMDB
+- Hosting: Netlify
 
 ## Requirements:
 # User Interface:
