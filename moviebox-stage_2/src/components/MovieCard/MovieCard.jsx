@@ -74,7 +74,7 @@ export const MovieCard = () => {
 
 
 
-      <div className='card grid place-items-center sm:grid-cols-3 lg:grid-cols-4 grid-rows-3 gap-4'>
+      <div className='card grid place-items-center grid-cols-2  sm:grid-cols-3 lg:grid-cols-4 grid-rows-3 gap-4'>
   
         {getMovies?.slice(0, displayCount)?.map((movie) => (
           <div key={movie.id} className="pt-8" data-testid='movie-card'>
