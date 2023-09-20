@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import poster from '../../assets/Poster-Image.png';
-import image from '../../assets/showtimes.png';
+import image from '../../assets/image.png';
 import {
   DndContext,
   useDraggable,
@@ -73,7 +73,7 @@ const DraggableImage = ({ imageId, activeId, setActiveId }) => {
       onClick={() => setActiveId(imageId)}
       className={`rounded-lg ${isDragging ? 'dragging' : ''}`}
     >
-      <img src={imageId === 4 ? image : poster} alt="" className="rounded-lg max-h-full" />
+      <img src={imageId === 4 ? image : poster} alt="" className="rounded-lg max-h-[200px] w-[200px] md:max-h-[240px] sm:max-h-[300px]" />
     </div>
   );
 };
