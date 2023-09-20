@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { auth } from '../../firebase/config'
 import { onAuthStateChanged, signOut } from 'firebase/auth'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 export const AuthDetails = () => {
 
@@ -30,7 +30,7 @@ export const AuthDetails = () => {
     
   return (
     <div>
-        { user ? <button className='bg-green-700 text-white rounded-lg w-[90px] font-bold' onClick={Logout}>Logout</button> : <Link to={'/'}>Login</Link> }
+        { user ? <button className='bg-green-700 text-white rounded-lg w-[90px] font-bold' onClick={Logout}>Logout</button> : '' }
         
     </div>
   )

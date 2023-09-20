@@ -31,14 +31,13 @@ export const Body = () => {
   return (
     <div className="grid grid-cols-1 place-items-center sm:grid-cols-1 gap-4 mt-16 mx-8 h-auto max-w-full">
       <DndContext onDragEnd={handleDragEnd}>
-        {/* Pass activeId to DropTarget */}
         <DropTarget images={images} setActiveId={setActiveId} activeId={activeId} />
       </DndContext>
     </div>
   );
 };
 
-const DraggableImage = ({ imageId, activeId, setActiveId }) => {
+const DraggableImage = React.memo(({ imageId, activeId, setActiveId }) => {
   const sensors = useSensors(
     useSensor(PointerSensor),
     useSensor(KeyboardSensor, {
@@ -56,7 +55,6 @@ const DraggableImage = ({ imageId, activeId, setActiveId }) => {
     sensors,
   });
 
-  // Check if transform is defined before accessing its properties
   const style = transform
     ? {
         transform: `translate3d(${transform.x}px, ${transform.y}px, 0)`,
@@ -73,14 +71,19 @@ const DraggableImage = ({ imageId, activeId, setActiveId }) => {
       onClick={() => setActiveId(imageId)}
       className={`rounded-lg ${isDragging ? 'dragging' : ''}`}
     >
-      <img src={imageId === 4 ? image : poster} alt="" className="rounded-lg max-h-[200px] w-[200px] md:max-h-[240px] sm:max-h-[300px]" />
+      <img
+        src={imageId === 4 ? image : poster}
+        alt=""
+        className="rounded-lg max-h-[200px] w-[200px] md:max-h-[240px] sm:max-h-[300px]"
+        loading='lazy'
+      />
     </div>
   );
-};
+});
 
 const DropTarget = ({ images, setActiveId, activeId }) => {
   const { isOver, setNodeRef } = useDroppable({
-    id: 'drop-target', // Provide a unique ID for the drop target
+    id: 'drop-target',
   });
 
   const style = {
@@ -88,11 +91,7 @@ const DropTarget = ({ images, setActiveId, activeId }) => {
   };
 
   return (
-    <div
-      className="grid grid-cols-2 sm:grid-cols-4 gap-4"
-      style={style}
-      ref={setNodeRef}
-    >
+    <div className="grid grid-cols-2 sm:grid-cols-4 gap-4" style={style} ref={setNodeRef}>
       {images.map((imageId) => (
         <DraggableImage
           key={imageId}
