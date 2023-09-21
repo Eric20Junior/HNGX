@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
-import poster from '../../assets/Poster-Image.png';
-import image from '../../assets/image.png';
+import image1 from '../../assets/images8.jpeg';
+import image2 from '../../assets/image2.jpeg';
+import image3 from '../../assets/image3.jpeg';
+import image4 from '../../assets/images4.jpeg';
+import image5 from '../../assets/image5.jpeg';
+import image6 from '../../assets/image6.jpeg';
+import image7 from '../../assets/image7.png'; // New image import
+import image10 from '../../assets/images10.jpeg'; // New image import
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import {
   DndContext,
   useDraggable,
@@ -12,7 +19,7 @@ import {
 } from '@dnd-kit/core';
 
 export const Body = () => {
-  const [images, setImages] = useState([1, 2, 3, 4]);
+  const [images, setImages] = useState([1, 2, 3, 4, 5, 7, 10]); // Include new image IDs
   const [activeId, setActiveId] = useState(null);
 
   const handleDragEnd = (event) => {
@@ -62,6 +69,18 @@ const DraggableImage = React.memo(({ imageId, activeId, setActiveId }) => {
       }
     : {};
 
+  // Add a mapping for the new image IDs (7 and 10)
+  const imageMapping = {
+    1: image1,
+    2: image2,
+    3: image3,
+    4: image4,
+    5: image5,
+    6: image6,
+    7: image7,
+    10: image10,
+  };
+
   return (
     <div
       ref={setNodeRef}
@@ -71,11 +90,10 @@ const DraggableImage = React.memo(({ imageId, activeId, setActiveId }) => {
       onClick={() => setActiveId(imageId)}
       className={`rounded-lg ${isDragging ? 'dragging' : ''}`}
     >
-      <img
-        src={imageId === 4 ? image : poster}
+      <LazyLoadImage
+        src={imageMapping[imageId] || ''}
         alt=""
-        className="rounded-lg max-h-[200px] w-[200px] md:max-h-[240px] sm:max-h-[300px]"
-        loading='lazy'
+        className="rounded-lg w-full h-auto max-h-[300px] max-w-[300px] md:max-h-[350px] md:max-w-[350px] sm:max-h-[400px] sm:max-w-[400px]"
       />
     </div>
   );

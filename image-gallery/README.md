@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+## Stage Three
+## Task: Develop a Drag-and-Drop Image gallery using React or Next Js
+- Objective: You will implement a fully functional and responsive image gallery that showcases a collection of images in a visually appealing way.
+- A user should be able to Login to the gallery page. Authenticated users should be able to use the Drag-and-Drop feature, they should be able to select and drag images, effortlessly rearranging them within the gallery.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# View Live Project
+You can view the live project [Click here](hhttps://bespoke-dodol-7e839b.netlify.app)
 
-## Available Scripts
+## Tools & Frameworks Used:
+- Build: ReactJS
+- CSS: TailwindCSS
+- Firebase
+- Hosting: Netlify
 
-In the project directory, you can run:
+# How To Run Project Locally
+- After cloning down:
+- On your Terminal cd to 'image-gallery'
+- Type in "npm i" in the terminal to ensure all the dependencies are installed
+- Type in "npm start" in the terminal to spin up the file on local host. It will spin up to local host 3000
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Requirements:
+## Simple Authentication: 
+- This means login with this email and password:
+- UserName: user@example.com
+- Password: 1Password
+- The authentication form fields should have proper validation setup, with proper error messages. You do not need to implement this on the backend yourself, you could use solutions like NextAuth, Auth0 or Clerk, firebase for Auth or add etc.
+## Image Display:
+- Display a grid layout that showcases a collection of images presented in a visually appealing manner with consistent spacing and sizing, add a tag to each image.
+## Loading state:
+- The page should have a loading state for when images are not ready for display, display a skeleton loader or a loading spinner when loading is true
+## Search Functionality:
+- You should have a search field that filters the image list based on the tags added to the images.
+## Drag-and-Drop:
+-Implement the ability for users to drag and drop images within the gallery.
+## User-friendly Feedback:
+- Incorporate smooth animations and visual cues that provide feedback during drag and drop interactions.
+## Responsive Design:
+- Ensure that the gallery is responsive and functions seamlessly on different devices, including mobile phones, tablets, and desktops.
+## Design Flexibility:
+- While adhering to the above requirements, you have the creative freedom to come up with a unique and appealing design.
+## Acceptance Criteria:
+- Functional Authentication: A fully functional authentication process.
+- Drag-and-Drop Feature: A fully functional drag and drop feature must be implemented.
+- Responsiveness: Design must be responsive across various desktop  screens, including mobile and tablet screens.
+- User Experience: Design must be intuitive, appealing, and encourage easy navigation and operation (i.e., NO LAGGING).
+- Image Display: All Images should have consistent spacing and sizing.
