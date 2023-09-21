@@ -62,7 +62,7 @@ export const Body = () => {
   useEffect(() => {
     const delay = setTimeout(() => {
       setIsLoading(false); 
-    }, 2000);
+    }, 6000);
 
     return () => clearTimeout(delay);
   }, []);
