@@ -4,7 +4,7 @@
 - A user should be able to Login to the gallery page. Authenticated users should be able to use the Drag-and-Drop feature, they should be able to select and drag images, effortlessly rearranging them within the gallery.
 
 # View Live Project
-You can view the live project [Click here](hhttps://bespoke-dodol-7e839b.netlify.app)
+You can view the live project [Click here](https://bespoke-dodol-7e839b.netlify.app)
 
 ## Tools & Frameworks Used:
 - Build: ReactJS

@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import image1 from '../../assets/images8.jpeg';
 import image2 from '../../assets/image2.jpeg';
 import image3 from '../../assets/image3.jpeg';
 import image4 from '../../assets/images4.jpeg';
 import image5 from '../../assets/image5.jpeg';
 import image6 from '../../assets/image6.jpeg';
-import image7 from '../../assets/image7.png'; // New image import
-import image10 from '../../assets/images10.jpeg'; // New image import
+import image7 from '../../assets/image7.png'; 
+import image10 from '../../assets/images10.jpeg'; 
+import image11 from '../../assets/images1.jpeg'; 
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import {
   DndContext,
@@ -18,9 +19,32 @@ import {
   useDroppable,
 } from '@dnd-kit/core';
 
+
+function getTagsForImage(imageId) {
+  const imageTags = {
+    1: 'dogs, animals',
+    2: 'cats, animals',
+    3: 'messi',
+    4: 'car',
+    5: 'cats, animals',
+    7: 'cats, animals',
+    10: 'ronaldo',
+    11: 'dogs, animals',
+  };
+
+  // Check if the image ID exists in the imageTags object
+  if (imageTags.hasOwnProperty(imageId)) {
+    return imageTags[imageId];
+  }
+  // Return an empty string if the image ID is not found in the mapping
+  return '';
+}
+
 export const Body = () => {
-  const [images, setImages] = useState([1, 2, 3, 4, 5, 7, 10]); // Include new image IDs
+  const [images, setImages] = useState([1, 2, 3, 4, 5, 7, 10, 11]); // Include new image IDs
   const [activeId, setActiveId] = useState(null);
+  const [isLoading, setIsLoading] = useState(true); 
+  const [searchQuery, setSearchQuery] = useState('');
 
   const handleDragEnd = (event) => {
     const { active, over } = event;
@@ -35,11 +59,40 @@ export const Body = () => {
     setActiveId(null);
   };
 
+  useEffect(() => {
+    const delay = setTimeout(() => {
+      setIsLoading(false); 
+    }, 2000);
+
+    return () => clearTimeout(delay);
+  }, []);
+
   return (
-    <div className="grid grid-cols-1 place-items-center sm:grid-cols-1 gap-4 mt-16 mx-8 h-auto max-w-full">
+    <div className="grid grid-cols-1 place-items-center sm:grid-cols-1 gap-4 mt-16 mx-8 h-auto max-w-full ">
+      <div>
+        {/* Search input field */}
+        <input
+          type="text"
+          placeholder="Search by tags"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          className='border border-green-700 rounded-lg text-xs h-[30px] w-[300px] text-center '
+        />
+      </div>
       <DndContext onDragEnd={handleDragEnd}>
-        <DropTarget images={images} setActiveId={setActiveId} activeId={activeId} />
+        <DropTarget images={images} setActiveId={setActiveId} activeId={activeId} searchQuery={searchQuery} />
       </DndContext>
+      {isLoading && <LoadingSpinner />} 
+    </div>
+  );
+};
+
+const LoadingSpinner = () => {
+  return (
+    <div className="spinner">
+      <div className="spinner-inner">
+        <h1 className='animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24'>Loading....</h1>
+      </div>
     </div>
   );
 };
@@ -69,7 +122,6 @@ const DraggableImage = React.memo(({ imageId, activeId, setActiveId }) => {
       }
     : {};
 
-  // Add a mapping for the new image IDs (7 and 10)
   const imageMapping = {
     1: image1,
     2: image2,
@@ -79,6 +131,7 @@ const DraggableImage = React.memo(({ imageId, activeId, setActiveId }) => {
     6: image6,
     7: image7,
     10: image10,
+    11: image11,
   };
 
   return (
@@ -93,13 +146,13 @@ const DraggableImage = React.memo(({ imageId, activeId, setActiveId }) => {
       <LazyLoadImage
         src={imageMapping[imageId] || ''}
         alt=""
-        className="rounded-lg w-full h-auto max-h-[300px] max-w-[300px] md:max-h-[350px] md:max-w-[350px] sm:max-h-[400px] sm:max-w-[400px]"
+        className="rounded-lg w-full max-h-[200px] max-w-[300px] md:max-h-[260px] md:max-w-[350px] sm:max-h-[300px] sm:max-w-[400px]"
       />
     </div>
   );
 });
 
-const DropTarget = ({ images, setActiveId, activeId }) => {
+const DropTarget = ({ images, setActiveId, activeId, searchQuery }) => {
   const { isOver, setNodeRef } = useDroppable({
     id: 'drop-target',
   });
@@ -108,9 +161,17 @@ const DropTarget = ({ images, setActiveId, activeId }) => {
     border: isOver ? '2px dashed #000' : '2px dashed transparent',
   };
 
+  // Filter images based on search query or display all images if no search query
+  const filteredImages = searchQuery
+    ? images.filter((imageId) => {
+        const tagsForImage = getTagsForImage(imageId);
+        return tagsForImage.toLowerCase().includes(searchQuery.toLowerCase());
+      })
+    : images;
+
   return (
     <div className="grid grid-cols-2 sm:grid-cols-4 gap-4" style={style} ref={setNodeRef}>
-      {images.map((imageId) => (
+      {filteredImages.map((imageId) => (
         <DraggableImage
           key={imageId}
           imageId={imageId}
