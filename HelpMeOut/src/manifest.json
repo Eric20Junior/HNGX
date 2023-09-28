@@ -11,6 +11,7 @@
     "version": "1.0.1",
     "action": {
         "default_popup": "index.html",
+        "default_title": "HelpMeOut",
         "default_icon": "images/icon1.png"
       }
 }
