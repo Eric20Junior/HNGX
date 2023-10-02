@@ -2,6 +2,8 @@
 
 # Task 2: Build an On-Page Assistant
 
+- Objective: Develop a proof-of-concept for an on-page assistant that appears in the lower left corner of a web page. This assistant should be a transparent, moving video (not an image) and provide helpful information to users.
+
 # View Live Project
 - You can view the live project [Click here](https://onpageassistant-hngx.vercel.app/)
 
@@ -10,7 +12,6 @@
 - CSS: TailwindCSS
 - Hosting: Vercel
 
-- Objective: Develop a proof-of-concept for an on-page assistant that appears in the lower left corner of a web page. This assistant should be a transparent, moving video (not an image) and provide helpful information to users.
 # Requirements:
 - Design and create an animated, transparent assistant that appears in the lower left corner of a web page.
 - When a button is clicked on the page, the assistant should move to the button and explain what that button does.
