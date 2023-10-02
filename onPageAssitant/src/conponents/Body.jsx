@@ -49,7 +49,7 @@ export const Body = () => {
               src={help}
               alt=""
               className='mark w-10 text-green-700 cursor-pointer'
-              onClick={(e) => handleMarkClick(e, 'Hello welcome to our website, You can email us at example@example.com')}
+              onClick={(e) => handleMarkClick(e, 'You can email us at example@example.com')}
             />
           </div>
         </div>
