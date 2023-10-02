@@ -49,7 +49,7 @@ export const Body = () => {
               src={help}
               alt=""
               className='mark w-10 text-green-700 cursor-pointer'
-              onClick={(e) => handleMarkClick(e, 'Custom Text 1')}
+              onClick={(e) => handleMarkClick(e, 'Hello welcome to our website, You can email us at example@example.com')}
             />
           </div>
         </div>
@@ -67,7 +67,7 @@ export const Body = () => {
             src={help}
             alt=""
             className='mark w-10 text-green-700 cursor-pointer float-right'
-            onClick={(e) => handleMarkClick(e, 'Custom Text 2')}
+            onClick={(e) => handleMarkClick(e, 'Please read through our services')}
           />
         </div>
 
@@ -82,7 +82,7 @@ export const Body = () => {
             src={help}
             alt=""
             className='mark w-10 text-green-700 cursor-pointer float-right'
-            onClick={(e) => handleMarkClick(e, 'Custom Text 3')}
+            onClick={(e) => handleMarkClick(e, 'Make sure you follow us on our socials')}
           />
         </div>
       </div>
