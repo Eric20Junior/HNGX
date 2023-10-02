@@ -11,16 +11,16 @@ import monitor from '../public/images/monitor.svg'
 import tab from '../public/images/tab.svg'
 import camera from '../public/images/video-camera.svg'
 import audio from '../public/images/microphone.svg'
-import pause from '../public/images/pause.svg'
-import stop from '../public/images/stop.svg'
-import camera2 from '../public/images/rec_camera.svg'
-import audio2 from '../public/images/rec_mic.png'
 
 function App() {
   const [isAudioEnabled, setIsAudioEnabled] = useState(true);
   const [isCameraEnabled, setIsCameraEnabled] = useState(true);
+  
   const { status, startRecording, stopRecording, mediaBlobUrl } =
-    useReactMediaRecorder({ screen: isCameraEnabled, audio:isAudioEnabled });
+    useReactMediaRecorder({ 
+      video: isCameraEnabled, 
+      audio:isAudioEnabled, 
+      screen: true });
 
     const toggleAudio = () => {
       setIsAudioEnabled((prev) => !prev);
@@ -30,9 +30,11 @@ function App() {
       setIsCameraEnabled((prev) => !prev);
     };
     
+   
+    
 
   return (
-    <div className='h-[439px] w-[300px] rounded-[24px] p-[24px] gap-[32px] shadow-xl'>
+    <div className='h-[439px] w-[300px] rounded-[24px] p-[24px] gap-[32px] shadow-xl mx-40 my-20'>
       <div className='flex justify-between'>
         <div className='flex space-x-3 font-bold'>
           <img src={logo} alt="" className='w-[28px] h-[28px] ' />
@@ -92,34 +94,23 @@ function App() {
             </div>
         </div>
 
-        <div onClick={startRecording}>
-          <button onClick={startRecording} className='bg-[#120B48] w-[252px] h-[51px] text-white font-sans font-medium text-sm text-center py-4 leading-[18.77px] rounded-[12px] mt-6 '>Start Recording</button>
-        </div>
+        
 
-        {/* <div className='border-2 border-gray-200 w-[352px] h-[62px] rounded-full bg-black text-white flex text-xs '>
-          <span className='text-xs p-5'>00:03:45</span>
-          <div className='flex space-x-3 py-0.5'>
-            <div>
-            <img src={pause} alt="" className='w-[36px] pb-1' />
-            <span>pause</span>
-            </div>
-            <div>
-            <img src={stop} alt="" className='w-[36px] pb-1' />
-            <span>stop</span>
-            </div>
-            <div>
-            <img src={camera2} alt="" className='w-[36px]' />
-            <span>camera</span>
-            </div>
-            <div>
-            <img src={audio2} alt="" className='w-[36px]' />
-            <span>mic</span>
-            </div>
-            <div>
-            <img src="" alt="" className='w-[36px]' />
-            </div>
-          </div>
-        </div> */}
+        <div onClick={status === 'recording' ? stopRecording : startRecording}>
+        <button className='bg-[#120B48] w-[252px] h-[51px] text-white font-sans font-medium text-sm text-center py-4 leading-[18.77px] rounded-[12px] mt-6'>
+          {status === 'recording' ? 'Stop Recording' : 'Start Recording'}
+        </button>
+      </div>
+
+      {status === 'stopped' && mediaBlobUrl && (
+        <div>
+          <a href={mediaBlobUrl} download='recorded-screen.mp4' className='bg-[#120B48] w-[252px] h-[51px] text-white font-sans font-medium text-sm text-center py-4 leading-[18.77px] rounded-[12px] mt-4 block'>
+            Download Recording
+          </a>
+        </div>
+      )}
+
+
     </div>
   )
 }

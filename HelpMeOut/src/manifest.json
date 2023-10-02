@@ -14,5 +14,9 @@
         "default_title": "HelpMeOut",
         "default_icon": "images/icon1.png"
       },
-      "permissions": ["desktopCapture"]
+      "permissions": [
+        "activeTab",
+        "desktopCapture",
+        "storage"
+      ]
 }
