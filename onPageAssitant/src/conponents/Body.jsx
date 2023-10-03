@@ -21,7 +21,7 @@ export const Body = () => {
   // useEffect to initialize the assistant's position and text
   useEffect(() => {
     // Set the initial position and text here 
-    setAssistantPosition({ left: 10, top: 60 });
+    setAssistantPosition({ left: 10, top: 1050 });
     // setAssistantText('Initial Text');
   }, []);
 
