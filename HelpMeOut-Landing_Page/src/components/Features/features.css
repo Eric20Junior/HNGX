@@ -1,0 +1,41 @@
+
+
+.content-top > h2 {
+    color: #141414;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+}
+.content-top > p {
+    color: #616163;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 151.3%;
+}
+.content-main {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 100px;
+    margin-right: 100px
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.feature-right > h3 {
+    color: #1B233D;
+    font-family: Inter;
+    font-size: 28px;
+    font-weight: 600;
+}
+.feature-right > p {
+    max-width: 485px;
+    color: #616163;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 151.3%;
+}
+

@@ -1,0 +1,38 @@
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 100px;
+    margin-right: 100px;
+    border-bottom: 1px solid #100A42;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logo > img {
+    width: 40px;
+    height: 40px;
+}
+.logo > h4 {
+    color: #100A42;
+    font-size: 16px;
+    font-weight: 700;
+}
+.nav-links {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+}
+.nav-links > li {
+    color: #000;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.call-to-action > a {
+    color: #120B48;
+    font-size: 16px;
+    font-weight: 600;
+}
