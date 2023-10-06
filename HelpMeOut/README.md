@@ -1,6 +1,18 @@
 ## FRONTEND STAGE 5 TASK
 # Task 1: Chrome Extension Plugin for Screen Recording and Sharing
 - Objective: Create a Chrome Extension plugin that can record a user's screen and send the recorded content to a specific online location (endpoint). The design specifications can be found here: Figma Design.
+
+# Installation
+- Clone the repository.
+- Open Chrome and navigate to chrome://extensions/.
+- Enable "Developer mode."
+- Click "Load unpacked" and select the extension directory.
+
+# Usage
+- Click the extension icon to open the popup.
+- Click "Start Recording" to begin recording.
+- Click "Stop Recording" to stop and download the recording.
+
 # Requirements:
 - Implement the design exactly as provided. Ensure that all pages match the design precisely.
 - The plugin must work seamlessly on desktop.
